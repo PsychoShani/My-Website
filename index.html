@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,57 +7,76 @@
     <title>Psycho Shani</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #080808;
+            font-family: Arial, sans-serif;
+            background: #000;
             color: white;
         }
 
-        /* Navigation */
+        /* ================= HEADER ================= */
+
         header {
             width: 100%;
             padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #050505;
+            background: #080808;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 25px;
+            font-size: 24px;
             font-weight: bold;
             color: #ff3030;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+            white-space: nowrap;
         }
 
         nav a:hover {
             color: #ff3030;
         }
 
-        /* Hero */
+        /* ================= HERO ================= */
+
         .hero {
             min-height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px;
+            padding: 50px 20px;
         }
 
         .hero h1 {
-            font-size: 60px;
-            margin-bottom: 15px;
+            font-size: 55px;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
@@ -65,14 +84,14 @@
         }
 
         .hero p {
-            color: #bbb;
+            color: #aaa;
             font-size: 20px;
             margin-bottom: 30px;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 30px;
+            padding: 13px 30px;
             background: #ff3030;
             color: white;
             text-decoration: none;
@@ -81,15 +100,24 @@
         }
 
         .btn:hover {
-            transform: scale(1.08);
-            background: #d90000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 48, 48, 0.4);
         }
 
-        /* About */
+        /* ================= ABOUT ================= */
+
         .about {
             padding: 80px 10%;
             text-align: center;
-            background: #111;
+        }
+
+        .profile {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            border: 3px solid #ff3030;
         }
 
         .about h2 {
@@ -98,283 +126,315 @@
         }
 
         .about p {
-            max-width: 700px;
+            max-width: 650px;
             margin: auto;
-            color: #bbb;
+            color: #aaa;
             line-height: 1.7;
         }
 
-        /* Footer */
-        footer {
+        /* ================= CONTENT ================= */
+
+        .skills {
+            padding: 80px 10%;
             text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 280px;
+            padding: 30px;
+            background: #151515;
+            border-radius: 10px;
+            border: 1px solid #222;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ff3030;
+        }
+
+        .card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #ff3030;
+        }
+
+        /* ================= SOCIAL ================= */
+
+        .social {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .social a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            background: #ff3030;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 48, 48, 0.25);
+        }
+
+        .social a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 48, 48, 0.4);
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            width: 280px;
+            padding: 30px;
+            background: #151515;
+            border-radius: 10px;
+            border: 1px solid #222;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        .service-card h3 {
+            color: #ff3030;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff3030;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            width: 280px;
+            padding: 30px;
+            background: #151515;
+            border-radius: 10px;
+            border: 1px solid #222;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        .project-card h3 {
+            color: #ff3030;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff3030;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            padding: 80px 10%;
+            text-align: center;
+            background: #111;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #222;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 6px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form button {
+            padding: 14px 30px;
+            background: #ff3030;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #d90000;
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
             padding: 25px;
+            text-align: center;
             background: #050505;
             color: #777;
         }
 
-        /* Mobile */
+        /* ================= MOBILE ================= */
+
         @media (max-width: 700px) {
 
             header {
                 flex-direction: column;
                 gap: 15px;
+                padding: 18px 10px;
+            }
+
+            nav {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
             }
 
             nav a {
-                margin: 0 8px;
+                font-size: 13px;
+                padding: 4px 2px;
+            }
+
+            .hero {
+                min-height: 75vh;
             }
 
             .hero h1 {
-                font-size: 40px;
+                font-size: 38px;
             }
-        }.skills {
-    padding: 80px 10%;
-    text-align: center;
-}
 
-.skills h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-}
+            .hero p {
+                font-size: 17px;
+            }
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+            .about,
+            .skills,
+            .services,
+            .projects,
+            .contact {
+                padding: 60px 20px;
+            }
 
-.card {
-    width: 280px;
-    padding: 30px;
-    background: #151515;
-    border-radius: 10px;
-    transition: 0.3s;
-}
+            .about h2,
+            .skills h2,
+            .services h2,
+            .projects h2,
+            .contact h2 {
+                font-size: 32px;
+            }
 
-.card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #ff3030;
-}
+            .card,
+            .service-card,
+            .project-card {
+                width: 100%;
+                max-width: 320px;
+            }
 
-.card p {
-    color: #aaa;
-    line-height: 1.6;
-}
+            .profile {
+                width: 150px;
+                height: 150px;
+            }
 
-.card:hover {
-    transform: translateY(-10px);
-}.social {
-    text-align: center;
-    padding: 40px;
-}
+            .social {
+                padding: 30px 15px;
+            }
 
-.social a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
-    background: #ff3030;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: 0.3s;
-}
+        }
 
-.social a:hover {
-    transform: translateY(-5px);
-}.profile {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 25px;
-    border: 3px solid #ff3030;
-}.contact {
-    padding: 80px 10%;
-    text-align: center;
-    background: #111;
-}
-
-.contact h2 {
-    font-size: 40px;
-    margin-bottom: 30px;
-}
-
-.contact-form {
-    max-width: 500px;
-    margin: auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    background: #222;
-    color: white;
-    border: 1px solid #444;
-    border-radius: 6px;
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: none;
-}
-
-.contact-form button {
-    padding: 14px 30px;
-    background: #ff3030;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.contact-form button:hover {
-    background: #d90000;
-}.services {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.services h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-}
-
-.service-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.service-card {
-    width: 280px;
-    padding: 30px;
-    background: #151515;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.service-card h3 {
-    color: #ff3030;
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    color: #aaa;
-    line-height: 1.6;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-}.projects {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.projects h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-}
-
-.project-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.project-card {
-    width: 280px;
-    padding: 30px;
-    background: #151515;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.project-card h3 {
-    color: #ff3030;
-    margin-bottom: 15px;
-}
-
-.project-card p {
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.project-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #ff3030;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}.btn,
-.social a,
-.project-btn,
-.contact-form button {
-    box-shadow: 0 5px 15px rgba(255, 48, 48, 0.25);
-}
-
-.btn:hover,
-.social a:hover,
-.project-btn:hover,
-.contact-form button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 48, 48, 0.4);
-}.card,
-.service-card,
-.project-card {
-    border: 1px solid #222;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.card:hover,
-.service-card:hover,
-.project-card:hover {
-    border-color: #ff3030;
-}@media (max-width: 700px) {
-    .services {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.services h2 {
-    width: 100%;
-    font-size: 40px;
-    margin: 0 auto 40px auto;
-    text-align: center !important;
-}
-
-.service-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.service-card {
-    width: 280px;
-    padding: 30px;
-    background: #151515;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-}
     </style>
 </head>
 
 <body>
+
+    <!-- HEADER -->
 
     <header>
 
@@ -383,15 +443,17 @@
         </div>
 
         <nav>
-    <a href="#projects">Projects</a>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-     </nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
     </header>
 
+
+    <!-- HOME -->
 
     <section class="hero" id="home">
 
@@ -414,8 +476,12 @@
     </section>
 
 
+    <!-- ABOUT -->
+
     <section class="about" id="about">
-<img src="shani.jpg.jpeg" alt="Shani" class="profile">
+
+        <img src="shani.jpg.jpeg" alt="Shani" class="profile">
+
         <h2>About Me</h2>
 
         <p>
@@ -425,133 +491,153 @@
         </p>
 
     </section>
+
+
+   <!-- CONTENT -->
+
 <section class="skills">
 
     <h2>My Content</h2>
 
     <div class="card-container">
 
-        <div class="card">
+        <a href="https://www.youtube.com/@PsychoShaniAura" target="_blank" class="card">
             <h3>🧠 Psychology</h3>
             <p>Understand people and the power of the mind.</p>
-        </div>
+        </a>
 
-        <div class="card">
+        <a href="https://www.youtube.com/@PsychoShaniAura" target="_blank" class="card">
             <h3>🔥 Mindset</h3>
-            <p>Build confidence and a strong personality.</p>
-        </div>
+            <p>Build confidence and develop a strong mindset.</p>
+        </a>
 
-        <div class="card">
+        <a href="https://www.youtube.com/@PsychoShaniAura" target="_blank" class="card">
             <h3>💻 Technology</h3>
             <p>Explore technology and the digital world.</p>
-        </div>
-        <div class="card">
-            <h3>💻 Self Improvment /Growth </h3>
-            <p>Explore technology and the digital world.</p>
-        </div>
+        </a>
+
+        <a href="https://www.youtube.com/@PsychoShaniAura" target="_blank" class="card">
+            <h3>🚀 Self Improvement</h3>
+            <p>Learn, grow and become a better version of yourself.</p>
+        </a>
 
     </div>
 
 </section>
-<div class="social">
 
-    <a href="https://www.youtube.com/@PsychoShaniAura" target="_blank">
-    YouTube
-</a>
+    <!-- SOCIAL -->
 
-    <a href="https://www.instagram.com/psycho.shani?igsh=d2hpZ240Z2lrODN0" target="_blank">
-        Instagram
-    </a>
+    <div class="social">
 
-</div><section class="contact" id="contact">
+        <a href="https://www.youtube.com/@PsychoShaniAura" target="_blank">
+            YouTube
+        </a>
 
-    <h2>Contact Me</h2>
-
-<form class="contact-form" action="https://formspree.io/f/meajyrvg" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-
-       <input type="email" name="email" placeholder="Your Email" required>
-
-       <textarea name="message" placeholder="Your Message" required></textarea>
-
-        <button type="submit">Send Message</button>
-
-    </form>
-
-</section>
-<section class="projects" id="projects">
-
-    <h2>My Projects</h2>
-
-    <div class="project-container">
-
-        <div class="project-card">
-            <h3>🌐 Personal Website</h3>
-            <p>This website is my personal web development project.</p>
-            <a href="#" class="project-btn">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>🧮 Calculator</h3>
-            <p>A simple calculator project made for coding practice.</p>
-            <a href="#" class="project-btn">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>🎬 Video Project</h3>
-            <p>A content project created using video editing and scripting.</p>
-            <a href="#" class="project-btn">View Project</a>
-        </div>
+        <a href="https://www.instagram.com/psycho.shani" target="_blank">
+            Instagram
+        </a>
 
     </div>
 
-</section>
+
+    <!-- SERVICES -->
+
     <section class="services" id="services">
 
-    <h2>My Services</h2>
+        <h2>My Services</h2>
 
-    <div class="service-container">
+        <div class="service-container">
 
-        <div class="service-card">
-            <h3>💻 Website Development</h3>
-            <p>I create simple and modern websites.</p>
+            <div class="service-card">
+                <h3>💻 Website Development</h3>
+                <p>I create simple and modern websites.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🎨 Web Design</h3>
+                <p>I design clean and attractive web pages.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🎬 Content Creation</h3>
+                <p>I create content about mindset, psychology and technology.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🎥 Video Editing</h3>
+                <p>I edit engaging and professional videos for content creators.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>✍️ Script Writing</h3>
+                <p>I write powerful scripts for videos and social media content.</p>
+            </div>
+
         </div>
 
-        <div class="service-card">
-            <h3>🎨 Web Design</h3>
-            <p>I design clean and attractive web pages.</p>
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <h2>My Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <h3>🌐 Personal Website</h3>
+                <p>This website is my personal web development project.</p>
+                <a href="#" class="project-btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>🧮 Calculator</h3>
+                <p>A simple calculator project made for coding practice.</p>
+                <a href="#" class="project-btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>🎬 Video Project</h3>
+                <p>A content project created using video editing and scripting.</p>
+                <a href="#" class="project-btn">View Project</a>
+            </div>
+
         </div>
 
-        <div class="service-card">
-            <h3>🎬 Content Creation</h3>
-            <p>I create content about mindset, psychology and technology.</p>
-        </div>
+    </section>
 
-        <div class="service-card">
-            <h3>🎬 Video Editing</h3>
-            <p>I edit engaging and professional videos for content creators.</p>
-        </div>
 
-        <div class="service-card">
-            <h3>✍️ Script Writing</h3>
-            <p>I write powerful scripts for videos and social media content.</p>
-        </div>
+    <!-- CONTACT -->
 
-    </div>
+    <section class="contact" id="contact">
 
-</section>
+        <h2>Contact Me</h2>
 
-<section class="projects" id="projects">
-    ...
-</section>
+        <form class="contact-form">
 
-<section class="contact" id="contact">
-    ...
-</section>
+            <input type="text" placeholder="Your Name" required>
 
-<footer>
-    © 2026 Psycho Shani
-</footer>
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message" required></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 Psycho Shani
+    </footer>
+
 
 </body>
 </html>
